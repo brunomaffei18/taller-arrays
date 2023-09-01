@@ -36,7 +36,23 @@ function showList(array) {
   });
 }
 
+const elementosFiltrados = strangeArray.filter((element) => typeof element === "string");
+
+let listaFinal = elementosFiltrados.sort(function(a, b){
+
+  if (a.toLowerCase() > b.toLowerCase()) {
+    return 1;
+  }
+  if (a.toLowerCase() < b.toLowerCase()) {
+    return -1;
+  }
+  
+  return 0;
+
+})
+
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
+  showList(listaFinal)
 });
